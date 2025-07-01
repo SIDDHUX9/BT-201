@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engineering Physics BT-201</title>
+  <title>Engineering Physics BT-201 - The Bunker's Guide to Passing</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -17,6 +17,7 @@
       font-family: 'Poppins', sans-serif;
       background: #121212;
       color: #e0e0e0;
+      position: relative;
     }
 
     header {
@@ -25,6 +26,7 @@
       padding: 20px;
       text-align: center;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      position: relative;
     }
 
     h1 {
@@ -120,43 +122,231 @@
       font-size: 0.9rem;
       color: #888;
     }
+
+    .disclaimer {
+      background-color: #2d3748;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+      border-left: 4px solid #f56565;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+      margin-right: 5px;
+    }
+
+    .vibe-meter {
+      height: 5px;
+      background: linear-gradient(90deg, #f56565, #f6e05e, #68d391);
+      border-radius: 5px;
+      margin: 10px 0;
+      animation: vibe 3s infinite alternate;
+    }
+
+    @keyframes vibe {
+      0% { background-position: 0% }
+      100% { background-position: 100% }
+    }
+
+    /* Todo List Styles */
+    .todo-toggle {
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      background: #2d3748;
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .todo-container {
+      position: fixed;
+      right: -350px;
+      top: 80px;
+      width: 300px;
+      background: #1e1e1e;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: -5px 5px 15px rgba(0,0,0,0.3);
+      transition: right 0.3s ease;
+      z-index: 999;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .todo-container.show {
+      right: 20px;
+    }
+
+    .todo-container h3 {
+      margin-bottom: 15px;
+      color: #90cdf4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .todo-container h3 span {
+      cursor: pointer;
+    }
+
+    #todo-form {
+      display: flex;
+      margin-bottom: 15px;
+    }
+
+    #todo-input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      background: #2d3748;
+      color: white;
+    }
+
+    #todo-form button {
+      background: #4a5568;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    #todo-list {
+      list-style: none;
+    }
+
+    #todo-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #2d3748;
+    }
+
+    #todo-list li:last-child {
+      border-bottom: none;
+    }
+
+    #todo-list li.completed {
+      opacity: 0.7;
+    }
+
+    #todo-list li.completed .todo-text {
+      text-decoration: line-through;
+      color: #888;
+    }
+
+    .todo-text {
+      flex: 1;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .todo-actions {
+      display: flex;
+      gap: 5px;
+    }
+
+    .todo-actions button {
+      border: none;
+      padding: 3px 8px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+
+    .todo-actions .complete-btn {
+      background: #68d391;
+      color: #1a202c;
+    }
+
+    .todo-actions .delete-btn {
+      background: #f56565;
+      color: white;
+    }
   </style>
 </head>
 
 <body>
+  <button class="todo-toggle">📝</button>
+  <div class="todo-container">
+    <h3>Study To-Do <span class="emoji">✖️</span></h3>
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="Add a task...">
+      <button type="submit">Add</button>
+    </form>
+    <ul id="todo-list"></ul>
+  </div>
+
   <header>
     <h1>Engineering Physics - BT-201</h1>
-    <p>Organized Notes and PYQs</p>
+    <p>Semester's Survival Kit</p>
+    <div class="vibe-meter"></div>
   </header>
 
   <div class="shortcut-bar">
-    <a href="https://chat.openai.com" target="_blank">ChatGPT</a>
-    <a href="https://moodle.org" target="_blank">Moodle</a>
+    <a href="https://career-shiksha.com/post/important-rgpv-question-bt-201-engineering-physics-1styear/" target="_blank">📝 Career Shiksha IMPs</a>
+    <a href="https://moodle.org" target="_blank">🚪 Moodle (Uni Notes that we never checked)</a>
+    <a href="https://chat.openai.com" target="_blank">🤖 ChatGPT (The Saviour)</a>
   </div>
 
   <main>
     <div class="section">
       <h2>Physics Notes</h2>
+      <h4>Stolen from rgpvnotes because let's be honest,just to avoid download delay (and my sanity)</h4>
       <div class="pdf-list">
         <div class="pdf-card">
-          <a href="Unit1_Notes.pdf" target="_blank">Unit 1 - Wave Optics</a>
+          <a href="Unit 1 - Physics.pdf" target="_blank">Unit 1 </a>
+          <p>Wave Nature of Particles & The Schrodinger Equation(You're Both Pass & Fail until results are announced)    </p>
           <div class="actions">
-            <a href="Unit1_Notes.pdf" target="_blank">View</a>
-            <a href="Unit1_Notes.pdf" download>Download</a>
+            <a href="Unit 1 - Physics.pdf" target="_blank">👀 View</a>
+            <a href="Unit 1 - Physics.pdf" download>💾 Download</a>
           </div>
         </div>
         <div class="pdf-card">
-          <a href="Unit2_Notes.pdf" target="_blank">Unit 2 - Quantum Mechanics</a>
+          <a href="Unit 2 - Physics.pdf" target="_blank">Unit 2</a>
+          <p>Wave Optics</p>
           <div class="actions">
-            <a href="Unit2_Notes.pdf" target="_blank">View</a>
-            <a href="Unit2_Notes.pdf" download>Download</a>
+            <a href="Unit 2 - Physics.pdf" target="_blank">👀 View</a>
+            <a href="Unit 2 - Physics.pdf" download>💾 Download</a>
+          </div>
+        </div>
+                <div class="pdf-card">
+          <a href="Unit 3 - Physics.pdf" target="_blank">Unit 3</a>
+          <p> Introduction to Solid</p>
+          <div class="actions">
+            <a href="Unit 3 - Physics.pdf" target="_blank">👀 View</a>
+            <a href="Unit 3 - Physics.pdf" download>💾 Download</a>
+          </div>
+        </div>
+                <div class="pdf-card">
+          <a href="Unit 4 - Physics.pdf" target="_blank">Unit 4</a>
+          <p>Lasers</p>
+          <div class="actions">
+            <a href="Unit 4 - Physics.pdf" target="_blank">👀 View</a>
+            <a href="Unit 4 - Physics.pdf" download>💾 Download</a>
           </div>
         </div>
         <div class="pdf-card">
-          <a href="Unit3_Notes.pdf" target="_blank">Unit 3 - Solid State Physics</a>
+          <a href="Unit 5 - physics.pdf" target="_blank">Unit 5</a>
+          <p>Electrostatics in Vacuum</p>
           <div class="actions">
-            <a href="Unit3_Notes.pdf" target="_blank">View</a>
-            <a href="Unit3_Notes.pdf" download>Download</a>
+            <a href="Unit 5 - physics.pdf" target="_blank">👀 View</a>
+            <a href="Unit 5 - physics.pdf" download>💾 Download</a>
           </div>
         </div>
       </div>
@@ -164,42 +354,154 @@
 
     <div class="section">
       <h2>Previous Year Questions</h2>
+      <h4>The only thing more recycled than these questions is our excuses for not studying</h4>
       <div class="pdf-list">
-        <div class="pdf-card">
-          <a href="bt-201-engineering-physics-jun-2024.pdf" target="_blank">PYQ - June 2024</a>
+                <div class="pdf-card">
+          <a href="bt-201-engineering-physics-dec-2024.pdf" target="_blank">PYQ - Dec 2024</a>
+          <p>Fresh trauma now in PDF format!</p>
           <div class="actions">
-            <a href="bt-201-engineering-physics-jun-2024.pdf" target="_blank">View</a>
-            <a href="bt-201-engineering-physics-jun-2024.pdf" download>Download</a>
+            <a href="bt-201-engineering-physics-dec-2024.pdf" target="_blank">👀 View</a>
+            <a href="bt-201-engineering-physics-dec-2024.pdf" download>💾 Download</a>
           </div>
         </div>
         <div class="pdf-card">
-          <a href="bt-201-engineering-physics-dec-2024.pdf" target="_blank">PYQ - Dec 2024</a>
+          <a href="bt-201-engineering-physics-dec-2024.pdf" target="_blank">PYQ - June 2024</a>
+          <p>Summer Edition</p>
           <div class="actions">
-            <a href="bt-201-engineering-physics-dec-2024.pdf" target="_blank">View</a>
-            <a href="bt-201-engineering-physics-dec-2024.pdf" download>Download</a>
+            <a href="bt-201-engineering-physics-jun-2024.pdf" target="_blank">👀 View</a>
+            <a href="bt-201-engineering-physics-jun-2024.pdf" download>💾 Download</a>
+          </div>
+        </div>
+                <div class="pdf-card">
+          <a href="bt-201-engineering-physics-dec-2023.pdf" target="_blank">PYQ - Dec 2023</a>
+          <p>Winter Edition - brain chilling questions</p>
+          <div class="actions">
+            <a href="bt-201-engineering-physics-dec-2023.pdf" target="_blank">👀 View</a>
+            <a href="bt-201-engineering-physics-dec-2023.pdf" download>💾 Download</a>
           </div>
         </div>
         <div class="pdf-card">
           <a href="bt-201-engineering-physics-jun-2023.pdf" target="_blank">PYQ - June 2023</a>
+          <p>Vintage questions from back when we still had hope</p>
           <div class="actions">
-            <a href="bt-201-engineering-physics-jun-2023.pdf" target="_blank">View</a>
-            <a href="bt-201-engineering-physics-jun-2023.pdf" download>Download</a>
+            <a href="bt-201-engineering-physics-jun-2023.pdf" target="_blank">👀 View</a>
+            <a href="bt-201-engineering-physics-jun-2023.pdf" download>💾 Download</a>
           </div>
         </div>
         <div class="pdf-card">
           <a href="bt-201-engineering-physics-jun-2022.pdf" target="_blank">PYQ - June 2022</a>
+          <p>Archaeological artifact </p>
           <div class="actions">
-            <a href="bt-201-engineering-physics-jun-2022.pdf" target="_blank">View</a>
-            <a href="bt-201-engineering-physics-jun-2022.pdf" download>Download</a>
+            <a href="bt-201-engineering-physics-jun-2022.pdf" target="_blank">👀 View</a>
+            <a href="bt-201-engineering-physics-jun-2022.pdf" download>💾 Download</a>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="disclaimer">
+      <span class="emoji">⚠️</span><strong>OFFICIAL DISCLAIMER:</strong> This entire website is the direct consequence of choosing to binge-watch Netflix instead of attending physics lectures. The notes may be questionable, the PYQs may be outdated, but the regret is 100% authentic. Use at your own risk - just like we risked our attendance percentage.
+    </div>
   </main>
 
   <footer>
-    &copy; 2025 Engineering Physics BT-201 | Designed for students by students.
+    &copy; 2025 Engineering Physics BT-201 | A monument to poor life choices by SIDDHU SINGH
+    <br>
+    <small>Lectures attended: ❌ | Regrets: Loading... | Probability of passing: Schrödinger's Cat knows</small>
   </footer>
+
+  <script>
+    // Todo List Functionality
+    const todoToggle = document.querySelector('.todo-toggle');
+    const todoContainer = document.querySelector('.todo-container');
+    const todoClose = document.querySelector('.todo-container h3 span');
+    const todoForm = document.getElementById('todo-form');
+    const todoInput = document.getElementById('todo-input');
+    const todoList = document.getElementById('todo-list');
+
+    // Toggle todo visibility
+    todoToggle.addEventListener('click', () => {
+      todoContainer.classList.toggle('show');
+    });
+
+    todoClose.addEventListener('click', () => {
+      todoContainer.classList.remove('show');
+    });
+
+    // Load saved todos
+    let todos = JSON.parse(localStorage.getItem('todos')) || [];
+
+    function renderTodos() {
+      todoList.innerHTML = '';
+      todos.forEach((todo, index) => {
+        const li = document.createElement('li');
+        if (todo.completed) {
+          li.classList.add('completed');
+        }
+        li.innerHTML = `
+          <span class="todo-text">${todo.text}</span>
+          <div class="todo-actions">
+            <button class="complete-btn" data-id="${index}">${todo.completed ? 'Undo' : 'Done'}</button>
+            <button class="delete-btn" data-id="${index}">Delete</button>
+          </div>
+        `;
+        todoList.appendChild(li);
+      });
+
+      // Add event listeners
+      document.querySelectorAll('.todo-text').forEach(text => {
+        text.addEventListener('click', (e) => {
+          const index = e.target.parentElement.querySelector('button').getAttribute('data-id');
+          toggleComplete(index);
+        });
+      });
+
+      document.querySelectorAll('.complete-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+          const index = e.target.getAttribute('data-id');
+          toggleComplete(index);
+        });
+      });
+
+      document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+          const index = e.target.getAttribute('data-id');
+          deleteTodo(index);
+        });
+      });
+    }
+
+    function toggleComplete(index) {
+      todos[index].completed = !todos[index].completed;
+      saveTodos();
+      renderTodos();
+    }
+
+    function deleteTodo(index) {
+      todos.splice(index, 1);
+      saveTodos();
+      renderTodos();
+    }
+
+    function saveTodos() {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }
+
+    // Add new todo
+    todoForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const text = todoInput.value.trim();
+      if (text) {
+        todos.push({ text, completed: false });
+        saveTodos();
+        renderTodos();
+        todoInput.value = '';
+      }
+    });
+
+    // Initial render
+    renderTodos();
+  </script>
 </body>
 
 </html>
